@@ -1,0 +1,91 @@
+%Remove the oneside option below for double sided printing (e.g. for final (post-viva) submission)
+\documentclass[a4paper,12pt,oneside,openright]{book}
+
+% Preamble commands go here
+\usepackage{customisations}
+
+%% Some of the below packages may be useful to thesis writers in Physics
+%% Googling `latex <packagename>' will usually give you some documentation
+% \usepackage[load-configurations=abbreviations]{siunitx} % siunitx typesets physical units in a consistent manner
+\usepackage{booktabs} % booktabs provides professional formatting commands for tables
+\usepackage{amsmath} % amsmath provides extra maths symbols
+\usepackage{textcomp} % textcomp provides extra text symbols (like a degrees celsius symbol)
+% \usepackage{tikz} % tikz is a package for drawing diagrams and adding annotations to figures
+% \usepackage{threeparttable} % threeparttable allows for adding notes to tables
+% \usepackage{eps2pdf} % eps2pdf allows background transformation of eps files to pdfs so they 
+%						work seamlessly with pdflatex. If using this with the LaTeX editor Kile,
+%						you need to add --shell-escape before '%source', in
+%						Settings -> Configure Kile... -> Tools -> Build -> build_pdflatex
+\usepackage[acronym,nomain,nonumberlist]{glossaries}
+% End preamble
+
+% REPLACE THESE with your thesis title, your name and the date of submission of the thesis
+\title{Updated low-mass stellar yields including uncertainties derived from reaction rates}
+\author{Ashley Tattersall}
+\date{November 2020} % of submission
+
+\begin{document}
+
+% Thesis front matter - title page, abstract, acknowledgements, declaration and table of contents
+% See customisations.sty to modify the title page or declaration
+\singlespacing
+\maketitlepage
+\frontmatter
+\eighteenptleading
+\input{thesis-frontmatter/abstract}
+
+\singlespacing
+% Uncomment this line if you need to declare published work which forms part of the thesis
+\declarationpublications{
+
+Battino, Tattersall et al. 2019 MNRAS 489 1082-1098 (2019) \par
+\noindent Williams et al. 2020 Phys. Rev. C 102, 035801 (2020) \par
+\noindent Lennarz et al. 2020 PhLB 807, 135539 (2020) \par
+\noindent Lugaro et al. 2020 ApJ 898 96 (2020) \par
+\noindent Gawlik et al. 2020 Phys. Rev. C 100, 045804 (2020) \par
+\noindent Lederer-Woods et al. 2019 PhLB 790 458-465 (2019) \par
+\noindent Adsley et al. 2020 Phys. Rev. C (2020) \par
+\noindent Dietz et al. 2020
+}
+\makedeclaration
+
+
+\newacronym{agb}{AGB}{asymptotic giant branch}
+\newacronym{tp}{TP}{thermal pulse}
+\newacronym{sic}{SiC}{silicon carbide}
+\newacronym{pdcz}{PDCZ}{pulse driven convective zone}
+\newacronym{igw}{IGW}{internal gravity wave}
+\newacronym{wd}{WD}{white dwarf}
+\newacronym{ccsn}{CCSN}{core collapse super-nova}
+\newacronym{ecsn}{ECSN}{electron capture supernova}
+\newacronym{cbm}{CBM}{convective boundary mixing}
+\newacronym{pms}{PMS}{pre-main sequence}
+\newacronym{ms}{MS}{main sequence}
+\newacronym{rgb}{RGB}{red giant branch}
+\newacronym{hb}{HB}{horizontal branch}
+\newacronym{spro}{$s$-process}{slow neutron-capture process}
+\newacronym{ipro}{$i$-process}{intermediate neutron-capture process}
+\newacronym{rpro}{$r$-process}{rapid neutron-capture process}
+\newacronym{tdu}{TDU}{third dredge-up}
+\newacronym{gce}{GCE}{galactic chemical evolution}
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{\contentsname}
+\setcounter{tocdepth}{2}
+\tableofcontents
+
+% Include main matter here
+\mainmatter
+\eighteenptleading
+
+\include{chapter1/Stellar_evolution_and_nucleosynthesis_of_AGB_stars}
+\include{chapter2/Yields}
+\include{chapter3/Nucleosynthesis_code}
+\include{chapter4/Validation_from_observable_data}
+\include{chapter5/Yields_and_their_uncertainty}
+\include{chapter6/Conclusion}
+
+\backmatter
+
+\end{document}
